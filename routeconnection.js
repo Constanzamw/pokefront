@@ -1,3 +1,3 @@
-const apiUrl = "http://pokeapi-rnldb2nja-constanzas-projects-c7fd52e0.vercel.app"
+const apiUrl = "http://pokeapi-d9o1hekj4-constanzas-projects-c7fd52e0.vercel.app"
 
 export default apiUrl;
