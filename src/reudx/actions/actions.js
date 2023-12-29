@@ -1,13 +1,13 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 /* Dependencias */
+import apiUrl from "../../../routeconnection"
 import axios from "axios"
-import dotenv from 'dotenv';
-dotenv.config();
+
 /* Componentes */
 import { CLEAN_DETAIL, GET_POKEMONS, GET_POKENAME, GET_TYPES,POKEMON_DETAIL, FILTER_POKEMON,CREATE_POKEMON, CREATE_IMAGE, FILTER_ATTACK, SET_ORIGIN_DB,SET_ORIGIN_API,SET_ORIGIN , ORDER_AZ, FILTER_TYPES, CLEAR_TYPES, CLEAR_SEARCH, ORDER_FN, CREATE_USER_SUCCESS, CREATE_USER_FAILURE, LOG_IN_FAILURE, LOG_IN_SUCCESS, LOG_OUT,ORDER_ATT  } from "./action-types";
 
-const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+//const apiUrl = process.env.DEPLOY || 'http://localhost:3001'; // DOTENV ES SOLO PARA BACKEND!!
 
 
 export const getPokemons = () => {
