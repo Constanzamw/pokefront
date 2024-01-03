@@ -1,28 +1,185 @@
-
-
 .container {
-      display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url("../../../assets/PokemonStadium.png");
-    background-size: cover; 
-    background-position: center center; 
-    background-repeat: no-repeat; 
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh; /* Ajusta el alto al 100% de la pantalla */
+  overflow: hidden; /* Oculta el scroll vertical si es necesario */
+  background-image: url("../../../assets/parquee.jpg");
+  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+  background-position: center; /* Centra la imagen dentro del contenedor */
+  background-repeat: no-repeat; 
   
-  .card {
-    background-color: #fff; 
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-    text-align: center;
-   
 }
-.name{
-  font-size: larger;
+
+.name {
+  font-size: xx-large;
   font-weight: bolder;
   font-style: oblique;
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 1%;
+  color: white; /* Color del texto (negro en este caso) */
+  text-shadow: 3px 3px 0px black; /* Definición del sombreado (offset-x offset-y blur-radius color) */
 }
 
+.info {
+  display: flex;
+  width: 100%;
+  flex-direction: row; /* O ajusta según tus necesidades */
+  align-items: center;
+  justify-content: flex-start; /* Ajusta la alineación hacia la izquierda */
+  height: 100%; /* Ocupa el 100% de la altura de la pantalla */
+  
+}
+
+.image {
+  margin-right: 100px;
+  margin-bottom: 400px;
+  justify-content: left;
+  margin-left: 200px;
+ 
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 150px; /* Ajusta el margen a la izquierda de los detalles según tu preferencia */
+    margin-bottom: 250px;
+  font-size: xx-large;
+  font-weight: bolder;
+  font-style: oblique;
+  color: white; /* Color del texto (negro en este caso) */
+  text-shadow: 3px 3px 0px black; /* Definición del sombreado (offset-x offset-y blur-radius color) */
+}
+
+.types {
+  font-weight: bold;
+  font-size: x-large;
+  font-weight: bolder;
+  font-style: oblique;
+  color: white; /* Color del texto (negro en este caso) */
+  text-shadow: 3px 3px 0px black; /* Definición del sombreado (offset-x offset-y blur-radius color) */
+}
+
+
+.electric{
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../assets/energias/electric.jpg");
+  background-size: cover;
+}
+.backBug{
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../assets/energias/bug.jpg");
+  background-size: cover;
+}
+.backDark{
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../assets/energias/dark.jpg");
+  background-size: cover;
+}
+.backDragon{
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../assets/energias/dragon.jpg");
+  background-size: cover;
+}
+.backFairy{
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../assets/energias/fairy.jpg");
+  background-size: cover;
+}
+.backFighting{
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../assets/energias/fighting.jpg");
+  background-size: cover;
+}
+.backFire{
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../assets/energias/fire.jpg");
+  background-size: cover;
+}
+.backFlying{
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../assets/energias/flying.jpg");
+  background-size: cover;
+}
+.backGhost{
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../assets/energias/ghost.jpg");
+  background-size: cover;
+}
+.backGrass{
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../assets/energias/grass.jpg");
+  background-size: cover;
+}
+.backGround{
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../assets/energias/ground.jpg");
+  background-size: cover;
+}
+.backIce{
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../assets/energias/ice.jpg");
+  background-size: cover;
+}
+.backNormal{
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../assets/energias/normal.jpg");
+  background-size: cover;
+}
+.backPoison{
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../assets/energias/poison.jpg");
+  background-size: cover;
+}
+.backPsychic{
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../assets/energias/psychic.jpg");
+  background-size: cover;
+}
+.backRock{
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../assets/energias/rock.jpg");
+  background-size: cover;
+}
+.backShadow{
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../assets/energias/shadow.jpg");
+  background-size: cover;
+}
+.backSteel{
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../assets/energias/steel.jpg");
+  background-size: cover;
+}
+.backUnknown{
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../assets/energias/unknown.jpg");
+  background-size: cover;
+}
+.backWater{
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../assets/energias/water.jpg");
+  background-size: cover;
+}

@@ -15,7 +15,7 @@ const pokesPerPage=12
 const Paginate=()=>{
     let allPokemons = useSelector((state)=>state.filterPokemon)
     let order = useSelector((state)=> state.order)
-
+  //console.log(allPokemons, "jeje")
     const totalPages = Math.ceil(allPokemons.length / pokesPerPage)
     const [current, SetCurrent] = useState(0)
     const dispatch = useDispatch()
@@ -62,7 +62,10 @@ const Paginate=()=>{
               name={pokemon?.name}
               image={pokemon?.image} 
               types={pokemon?.types}
-
+              attack={pokemon?.attack}
+              defense={pokemon?.defense}
+              speed={pokemon?.speed}
+              hp={pokemon?.hitPoints}
             />
           )
         })

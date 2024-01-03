@@ -10,7 +10,7 @@ import './Cards.module.css';
 import Card from "../card/Card"
 
 const Cards = ({allPokemons}) => {
-
+console.log(allPokemons, "hhh")
   return (
     <div >
     
@@ -26,7 +26,10 @@ const Cards = ({allPokemons}) => {
               name={pokemon?.name}
               image={pokemon?.image} 
               types={pokemon?.types}
-              
+              attack={pokemon?.attack}
+              defense={pokemon?.defense}
+              speed={pokemon?.speed}
+              hp={pokemon?.hitPoints}
             />
           )
         })

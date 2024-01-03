@@ -11,7 +11,7 @@ import { Link } from "react-router-dom"
 //import { addFav, deleteFav } from "../../reudx/actions/actions";
 
 
-const Card = ({id,name,image,types}) => {
+const Card = ({id,name,image,types, attack, defense, speed, hp}) => {
   const dispatch = useDispatch();
   const allPokemons = useSelector((state)=> state.allPokemons)
   
@@ -30,19 +30,28 @@ const Card = ({id,name,image,types}) => {
   
 
   return (
-    <div className={`${style.container} ${style[backgroundColorClass]}`}>
-      <div className={style.topRight}>
-      </div>
-    
-      <h1 className={style.name}> {name}</h1>
+  <div className={`${style.container} ${style[backgroundColorClass]}`}>
+    {/* <div className={style.topRight}>
+      </div> */}
+    <h1 className={style.name}>
+       {name}
+    </h1>
     <div className={style.imageContainer}>
       <Link to={`/detail/${id}`}>
         <img className={style.image} src={image} alt={name} />
       </Link>
     </div>
     <div className={style.bottom}>
+      <div>
+        <p className={style.types}> 
+            {formattedTypes} 
+        </p>
+      </div>
+    
       
-      <h2 className={style.types}> {formattedTypes} </h2>
+      
+    
+      
     </div>
   </div>
   

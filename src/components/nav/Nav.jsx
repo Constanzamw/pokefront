@@ -98,7 +98,9 @@ const Nav = () => {
 
   return (
     <div className={style.navbar}>
+      <Link to="/home">
       <img src={Logo} alt="Logo" className={style.logo} />
+      </Link>
       <SearchBar />
     
       <div className={style.select}>

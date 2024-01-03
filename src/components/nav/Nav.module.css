@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #f2f2f2; /* Fondo grisáceo */
+    background-color: rgba(242, 242, 242, 0.5);
     position: fixed; /* Fijar la barra de navegación en la parte superior */
     top: 0; /* Alinear en la parte superior */
     width: 100%; /* Ancho completo */

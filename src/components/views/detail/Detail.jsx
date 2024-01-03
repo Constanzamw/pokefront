@@ -26,56 +26,59 @@ const  Detail = () => {
   },[dispatch,id])
 
   //esto lo hago porque sino me aparecen los typesjuntos!
+  
   const formattedTypes = pokemonDetailData?.types 
     ? pokemonDetailData.types.join(', ') 
     : '';
 
+    const getBackgroundClass = () => {
+      return pokemonDetailData?.types?.[0]?.name ?? '';
+    };
   
+    const backgroundClass = getBackgroundClass();
 
-  return (
-    
-      <div className={style.container}>
-      <div>
-      <button>
-        <Link to="/home" > X </Link>
-      </button>
-      <div className={style.card}>
-        <img src={pokemonDetailData?.image} />
-        <h1>{pokemonDetailData?.name}</h1>   
-        <div className={style.info}>
-
-        <label className={style.name}> Types: </label>
-        <p>{formattedTypes}</p> 
-
-        <label className={style.name}> HP: </label>
-        <span>{pokemonDetailData?.hitPoints}</span>
- 
-         <br/><br/>
-
-        <label className={style.name}> Attack: </label>
-        <span>{pokemonDetailData?.attack}</span>
-        <br/><br/>
-
-        <label className={style.name}> Defense: </label>
-        <span>{pokemonDetailData?.defense}</span>
-        <br/><br/>
-
-        <label className={style.name}> Speed: </label>
-        <span>{pokemonDetailData?.speed}</span> 
-        <br/><br/>
-
-        <label className={style.name}> Height: </label>
-        <span>{pokemonDetailData?.height}</span>
-        <br/><br/>
-        
-        <label className={style.name}> Weight: </label>
-        <span>{pokemonDetailData?.weight}</span>
+  
+    return (
+      <div className={`${style.container} ${style[backgroundClass]}`}>
+      <div className={style.name}>
+        <h1>{pokemonDetailData?.name}</h1>
       </div>
-      </div>
+      <div className={style.info}>
+        <div className={style.image}>
+          <img src={pokemonDetailData?.image} alt={pokemonDetailData?.name} />
+        </div>
+        <div className={style.details}>
+          <div>
+            <label className={style.types}> Types: </label>
+            <span>{formattedTypes}</span>
+          </div>
+          <div>
+            <label className={style.types}> HP: </label>
+            <span>{pokemonDetailData?.hitPoints}</span>
+          </div>
+          <div>
+            <label className={style.types}> Attack: </label>
+            <span>{pokemonDetailData?.attack}</span>
+          </div>
+          <div>
+            <label className={style.types}> Defense: </label>
+            <span>{pokemonDetailData?.defense}</span>
+          </div>
+          <div>
+            <label className={style.types}> Speed: </label>
+            <span>{pokemonDetailData?.speed}</span>
+          </div>
+          <div>
+            <label className={style.types}> Height: </label>
+            <span>{pokemonDetailData?.height}</span>
+          </div>
+          <div>
+            <label className={style.types}> Weight: </label>
+            <span>{pokemonDetailData?.weight}</span>
+          </div>
+        </div>
       </div>
     </div>
-    
   );
-}
-
+};
 export default Detail;

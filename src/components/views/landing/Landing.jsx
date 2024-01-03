@@ -11,7 +11,7 @@ const Landing = () => {
     return (
         <div className={styles.landingContainer} style={{ backgroundImage: `url(${pokeLandingImage})` }} >
          
-          <Link to="/login">
+          <Link to="/home">
             <button className={styles.button} > Start </button>
           </Link>
           

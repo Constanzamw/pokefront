@@ -20,7 +20,7 @@ const  Home = () => {
 
   let allPokemons = useSelector((state)=>state.allPokemons)
   const filterPokemons = useSelector((state) => state.filterPokemon);
-    
+    //console.log(allPokemons,"fg")
     useEffect(()=>{
       if(!allPokemons.length){
         dispatch(getPokemons())
@@ -31,7 +31,7 @@ const  Home = () => {
     <div className={style.background}>
       
       <div className={style.container}>
-        <Nav/>
+        
         <Paginate />
       </div>
     </div>
