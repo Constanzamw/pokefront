@@ -1,0 +1,15 @@
+.button{
+    border-radius: 12px;
+ }
+ 
+ .selectContainer {
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+  }
+  
+  .label {
+    margin-right: 10px; /* Ajusta según sea necesario */
+    border-radius: 12px;
+  }
+  

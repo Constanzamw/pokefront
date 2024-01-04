@@ -105,29 +105,33 @@ const Nav = () => {
     
       <div className={style.select}>
         <label>Filter by type: </label> 
-        <select value={selectedType} onChange={handleFilterTypes}>
-          <option value="all">All</option>
+        <select value={selectedType} onChange={handleFilterTypes} className={style.button}>
+          <option  value="all">All</option>
           {types.map((type) => (
             <option key={type.id} value={type.name}>
               {type.name}
             </option>
           ))}
         </select>
-          <button onClick={handleClearFilterTypes}> Clear Types </button>
+          <button onClick={handleClearFilterTypes} className={style.button}> Clear Types </button>
       </div>
-      <div className={style.select}>
-        <label>Sort by:</label>
+      <div className={style.select} >
+        {/* <label >Sort by:</label> */}
           <Select
             name="Sort by"
             values={["default", "A-Z", "Z-A"]}
             onChange={handleSortPokemons}
+            className={style.button}
           />
       </div>
       <div className={style.select}>
       <label >Order by attack</label>
       <select
         name="selectOrderAttack" 
-        onChange={handlerOrderAttack}>  
+        onChange={handlerOrderAttack}
+        className={style.button} 
+        > 
+        
         <option> - </option>
         <option value='1'>Strong</option>
         <option value='100'>Weak</option>
@@ -135,14 +139,14 @@ const Nav = () => {
       </div>
       <div>
       <label className={style.select}>Origin:</label>
-      <select value={selectedOrigin} onChange={handleOriginFilterChange}>
+      <select value={selectedOrigin} onChange={handleOriginFilterChange} className={style.button} >
         <option value="All">All</option>
         <option value="Api">API</option>
         <option value="Database">Database</option>    
       </select>
         </div>
       <div className={style.navbarButton}>
-        <button> 
+        <button className={style.create}> 
           <Link to="/create" > Create! </Link>
         </button>
       </div>

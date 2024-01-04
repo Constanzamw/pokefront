@@ -3,7 +3,8 @@ const validationCreate = (formData) => {
 let errores = {};
     const regex= new RegExp(/^[^\d\s]+$/u);
     const regex2= new RegExp(/^\d+$/);
-
+    //const urlRegex = new RegExp(/^(ftp|http|https):\/\/[^ "]+$/);
+    const urlRegex = new RegExp(/^(ftp|http|https):\/\/[^ "]+$/);
     
     // if (!formData.id) {
     //     errores.name= "Your pokemon must have an id higher than 1292";
@@ -96,6 +97,13 @@ let errores = {};
     // if (!formData.image) {
     //     errores.image = "Your pokémon must have an image";
     // }
+    if (!formData.image) {
+        errores.image = "Your pokémon must have an image";
+      } else if (!urlRegex.test(formData.image)) {
+        errores.image = "Enter a valid URL for the image";
+      }
+    
+      
     
     
     return errores;

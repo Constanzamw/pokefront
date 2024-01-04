@@ -9,14 +9,17 @@
     padding: 10px 20px; /* Espacio interno (arriba/abajo y izquierda/derecha) */
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
     z-index: 100;
+    
   }
   
   .select {
     padding: 20 20px;
+    border-radius: 22px;
   }
 
   .navbarButton {
     margin-right: 80px; /* Espacio entre el último filtro y el botón "CREATE" */
+    
   }
 
   .logo {
@@ -24,3 +27,24 @@
     height: 40px; /* Alto deseado */
     margin-right: 10px; /* Espacio entre la imagen y la barra de navegación */
   }
+
+  .create{
+  font-size: medium ;
+  border-radius: 12px;
+  padding: 8px;
+  color: #0b0b0c;
+  
+  }
+
+  .create:hover {
+    background: #d4eb09;
+    color: #fff;
+    box-shadow: 0 0 5px #dff70d,
+      0 0 25px #db4205,
+      0 0 50px #db4205,
+      0 0 100px #db4205;
+  }
+
+  .button{
+    border-radius: 12px;
+ }

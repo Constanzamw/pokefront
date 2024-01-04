@@ -76,7 +76,11 @@ const  Detail = () => {
             <label className={style.types}> Weight: </label>
             <span>{pokemonDetailData?.weight}</span>
           </div>
+          
         </div>
+        <Link to="/home">
+        <button className={style.button} > Home </button>
+      </Link>
       </div>
     </div>
   );

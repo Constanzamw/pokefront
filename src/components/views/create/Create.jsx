@@ -11,10 +11,141 @@ import { Navigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { clearSearch, createPokemon, createImage } from '../../../reudx/actions/actions';
 import { useDispatch, useSelector } from 'react-redux';
-
+import CardPreview from '../../cardPreview/CardPreview';
 
 const  Create = () => {
-  const dispatch = useDispatch();
+//   const dispatch = useDispatch();
+//   const imgList = useSelector((state) => state.img);
+//   const types = useSelector((state) => state.types);
+
+//   const [created, setCreated] = useState(false);
+//   const [showAlert, setShowAlert] = useState(false);
+
+//   const [formData, setFormData] = useState({
+     
+//     name: "",
+//     image: "",
+//     hitPoints: "",
+//     attack: "",
+//     defense: "",
+//     speed: "",
+//     height: "",
+//     weight: "",
+//     types: [],
+  
+//   });
+
+//   const [errors, setErrors] = useState({})
+//   const [allFieldsCompleted, setAllFieldsCompleted] = useState(false);
+  
+
+//   // const handleChange= (event) =>{
+//   //   if(event.target.name === "types") {
+    
+//   //     setFormData({
+//   //       ...formData,
+//   //       types: [...formData.types,event.target.value]
+//   //     })
+//   //     return
+//   //   }
+//   //   setFormData({
+//   //     ...formData,
+//   //     [event.target.name]: event.target.value
+//   //   })
+//   //   setErrors(validationsCreate(formData))
+//   // }
+
+//   const handleChange = (event) => {
+//     if (event.target.name === "types") {
+//       setFormData({
+//         ...formData,
+//         types: [...formData.types, event.target.value],
+//       });
+//       return;
+//     }
+//     setFormData({
+//       ...formData,
+//       [event.target.name]: event.target.value,
+//     });
+//   };
+//   useEffect(() => {
+//     setErrors(validationsCreate(formData));
+//   }, [formData]);
+
+//   // const handleSubmit = (event)=>{
+//   //   event.preventDefault();
+//   //    dispatch(createPokemon(formData))
+//   //   .then(() => {
+//   //     setCreated(true);
+//   //     setShowAlert(true); 
+//   //     setFormData({ // Limpiar los campos
+       
+//   //       name: "",
+//   //       image: "",
+//   //       hitPoints: "",
+//   //       attack: "",
+//   //       defense: "",
+//   //       speed: "",
+//   //       height: "",
+//   //       weight: "",
+//   //       types: [],
+//   //     });
+//   //     //window.location.reload(); // Recarga la página VER SI ES VALIDO
+//   //   })
+//   //   .catch((error) => {
+//   //     console.error(error);
+//   //   });
+  
+//   // }
+
+//   const handleSubmit = (event) => {
+//     event.preventDefault();
+//     dispatch(createPokemon(formData))
+//       .then(() => {
+//         setCreated(true);
+//         setShowAlert(true);
+//         setFormData({
+//           // Limpiar los campos
+//           name: "",
+//           image: "",
+//           hitPoints: "",
+//           attack: "",
+//           defense: "",
+//           speed: "",
+//           height: "",
+//           weight: "",
+//           types: [],
+//         });
+//       })
+//       .catch((error) => {
+//         console.error(error);
+//       });
+//   };
+
+
+//   // const areAllFieldsCompleted = () => {
+//   //   const fields = Object.values(formData);
+//   //   return fields.every((field) => field !== "" && field !== null);
+//   // };
+
+//   const areAllFieldsCompleted = () => {
+//     const fields = Object.values(formData);
+//     const errorValues = Object.values(errors);
+//     return (
+//       fields.every((field) => field !== "" && field !== null) &&
+//       errorValues.every((error) => !error)
+//     );
+//   };
+
+// useEffect(() => {
+//     setAllFieldsCompleted(areAllFieldsCompleted());
+// }, [formData,]);
+
+// useEffect(() => {
+//   dispatch(createImage())
+//    }, [dispatch]);
+
+const dispatch = useDispatch();
   const imgList = useSelector((state) => state.img);
   const types = useSelector((state) => state.types);
 
@@ -22,7 +153,6 @@ const  Create = () => {
   const [showAlert, setShowAlert] = useState(false);
 
   const [formData, setFormData] = useState({
-     
     name: "",
     image: "",
     hitPoints: "",
@@ -32,74 +162,70 @@ const  Create = () => {
     height: "",
     weight: "",
     types: [],
-  
   });
 
-  const [errors, setErrors] = useState({})
+  const [errors, setErrors] = useState({});
   const [allFieldsCompleted, setAllFieldsCompleted] = useState(false);
 
-  const handleChange= (event) =>{
-    if(event.target.name === "types") {
-    
+  const handleChange = (event) => {
+    if (event.target.name === "types") {
       setFormData({
         ...formData,
-        types: [...formData.types,event.target.value]
-      })
-      return
+        types: [...formData.types, event.target.value],
+      });
+      return;
     }
     setFormData({
       ...formData,
-      [event.target.name]: event.target.value
-    })
-    setErrors(validationsCreate(formData))
-  }
-
-  const handleSubmit = (event)=>{
-    event.preventDefault();
-     dispatch(createPokemon(formData))
-    .then(() => {
-      setCreated(true);
-      setShowAlert(true); 
-      setFormData({ // Limpiar los campos
-       
-        name: "",
-        image: "",
-        hitPoints: "",
-        attack: "",
-        defense: "",
-        speed: "",
-        height: "",
-        weight: "",
-        types: [],
-      });
-      //window.location.reload(); // Recarga la página VER SI ES VALIDO
-    })
-    .catch((error) => {
-      console.error(error);
+      [event.target.name]: event.target.value,
     });
-  
-  }
+    setErrors(validationsCreate(formData));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(createPokemon(formData))
+      .then(() => {
+        setCreated(true);
+        setShowAlert(true);
+        setFormData({
+          name: "",
+          image: "",
+          hitPoints: "",
+          attack: "",
+          defense: "",
+          speed: "",
+          height: "",
+          weight: "",
+          types: [],
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
   const areAllFieldsCompleted = () => {
     const fields = Object.values(formData);
     return fields.every((field) => field !== "" && field !== null);
   };
 
-useEffect(() => {
+  useEffect(() => {
     setAllFieldsCompleted(areAllFieldsCompleted());
-}, [formData,]);
+  }, [formData]);
 
-useEffect(() => {
-  dispatch(createImage())
-   }, [dispatch]);
+  useEffect(() => {
+    dispatch(createImage());
+  }, [dispatch]);
+
+
+
 
   return (
    <form onSubmit={handleSubmit}>
-    
-    <div className={style.container}>
- 
-
-      <div>
+     <div className={style.container}>
+      <div className={style.formSection}>
+      <div >
         <label className={style.text} htmlFor="name"> Name</label>
       </div>
       <div>
@@ -200,7 +326,7 @@ useEffect(() => {
         <label className={style.text} htmlFor="image"> Image </label>
       </div>
       <div>
-      <select name="image" value={formData.image} onChange={handleChange}>
+      {/* <select name="image" value={formData.image} onChange={handleChange}>
           <option value="">Select an image</option>
           {imgList && imgList.map((image) => (
             <option key={image.id} value={image.name}>
@@ -211,7 +337,15 @@ useEffect(() => {
         {
         formData.image && (
           <img src={formData.image} alt="selected image" />
-        )}
+        )} */}
+        <input
+            type="text"
+            key="image"
+            name="image"
+            placeholder="Enter image URL"
+            value={formData.image}
+            onChange={handleChange}
+          />
         <br />
         {errors.image ? <span className={style.error}>{errors.image}</span> : null}
       </div>
@@ -255,7 +389,8 @@ useEffect(() => {
             > 
             Create your Pokemon!</button>
         </div> 
-    <div>
+      </div>
+    <div className={style.homeButton}>
       <button className={style.home}>
         <Link to="/home"> Home </Link>
       </button>
@@ -266,7 +401,16 @@ useEffect(() => {
     
   </div>
 )}
-</div>
+
+<div className={style.cardPreview}>
+          <h2>Card Preview</h2>
+          <CardPreview {...formData} />
+        </div>
+    </div>
+   
+      
+
+
    </form>
    
   );

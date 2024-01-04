@@ -11,7 +11,7 @@ import { getPokename,  } from "../../reudx/actions/actions";
 import { clearSearch } from "../../reudx/actions/actions";
 import { Link } from "react-router-dom";
 import Card from "../card/Card";
-
+import style from'./SearchBar.module.css';
 
 const SearchBar =() => {
     
@@ -59,9 +59,10 @@ const HandleClearSearch = () => {
         placeholder="Search"
         value={inputValue}
         onChange={handleChange}
+        className={style.searchbar}
       />
-      <button onClick={onSearchs}>Search</button>
-      <button onClick={HandleClearSearch}>Clear Search</button>
+      <button className={style.button} onClick={onSearchs}>Search</button>
+      <button className={style.button} onClick={HandleClearSearch}>Clear Search</button>
       
     </div>
   );

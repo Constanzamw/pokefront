@@ -230,3 +230,27 @@ export const logOut = () => {
 };
 
 
+// export const fetchPokemons = () => {
+//   return async (dispatch) => {
+//     dispatch(fetchRequest());
+
+//     try {
+//       const response = await axios.get(`http://localhost:3001/pokemons`);
+//       dispatch(fetchSuccess(response.data));
+//     } catch (error) {
+//       dispatch(fetchFail(error.message));
+//     }
+//   };
+// };
+
+// export const fetchTypes = () => {
+//   return async (dispatch) => {
+//     try {
+//       const response = await axios.get(`http://localhost:3001/pokemons/type`);
+//       const types = response.data.map((typeObj) => typeObj.name);
+//       dispatch(setTypes(types));
+//     } catch (error) {
+//       console.error("Error fetching types:", error);
+//     }
+//   };
+// };

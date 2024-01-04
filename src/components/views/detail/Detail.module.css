@@ -63,6 +63,29 @@
 }
 
 
+.button {
+  position: fixed;
+  bottom: 10px; /* Ajusta la distancia desde la parte inferior según tus necesidades */
+  right: 10px; /* Ajusta la distancia desde la parte derecha según tus necesidades */
+  display: inline-block;
+  padding: 15px 10px;
+  color: #0b0b0c;
+  font-size: 10px;
+  transition: .5s;
+  margin-bottom: 40px;
+  margin-right: 80px;
+  letter-spacing: 4px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: scale(1.4); /* Ajusta el valor según el aumento deseado */
+  background-color: #0b0b0c;
+  color: white;
+}
+/* 
 .electric{
   display: flex;
   flex-direction: column;
@@ -182,4 +205,4 @@
   flex-direction: column;
   background-image: url("../../../assets/energias/water.jpg");
   background-size: cover;
-}
+} */
