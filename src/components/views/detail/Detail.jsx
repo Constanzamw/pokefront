@@ -18,7 +18,7 @@ const  Detail = () => {
   const { id } = useParams();
 
   const pokemonDetailData = useSelector((state)=> state.pokemonDetail)
- 
+  //const allPokemons = useSelector((state)=> state.allPokemons)
 
   useEffect(()=>{
     dispatch(pokemonDetail(id));
